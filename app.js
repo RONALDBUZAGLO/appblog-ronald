@@ -66,7 +66,7 @@
   
 //ROTAS
     app.get('/',(req,res)=>{
-        Postagem.find().populate("categoria").sort({data:"desc"}).then((postagens)=>{
+        Postagem.find().populate("categoria").sort({data:"desc"}).lean().then((postagens)=>{
             res.render('index',{postagens:postagens})
         }).catch((err)=>{
             req.flash("error_msg","Houve um erro interno")
@@ -122,7 +122,7 @@
     })
  
     app.get("/404",(req,res)=>{
-        res.send("Erro 404!")
+        res.send("Erro 404! teste")
     })
 
     app.use('/admin',admin)
