@@ -50,7 +50,6 @@
     }).then(() =>{
         console.log("Conectado ao mongo!")
     }).catch((err) =>{
-        
         console.log("Erro ao conectar: " + err)
     })
    
@@ -67,7 +66,7 @@
   
 //ROTAS
     app.get('/',(req,res)=>{
-        Postagem.find().populate("categoria").sort({data:"desc"}).lean().then((postagens)=>{
+        Postagem.find().populate("categoria").sort({data:"desc"}).then((postagens)=>{
             res.render('index',{postagens:postagens})
         }).catch((err)=>{
             req.flash("error_msg","Houve um erro interno")
