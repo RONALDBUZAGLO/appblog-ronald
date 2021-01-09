@@ -20,7 +20,7 @@
 //CONFIGURAÇÕES 
     //SESSÃO  
     app.use(session({
-        secret: "senseironald@gmail.com",
+        secret: "cursodenode",
         resave: true,
         saveUninitialized:true
     }))
