@@ -20,7 +20,7 @@
 //CONFIGURAÇÕES 
     //SESSÃO  
     app.use(session({
-        secret: "cursodenode",
+        secret: "super secret",
         resave: true,
         saveUninitialized:true
     }))
